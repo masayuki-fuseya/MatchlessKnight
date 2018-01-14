@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>d3add5e6-6c7c-4d19-98d4-d99ce8eaedc4</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dds;dlg;fbx;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Assets\FBX">
+      <UniqueIdentifier>{d4733f9d-e806-476d-8e8b-dd1257dce3b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{94191aac-e847-4807-b698-d301454d2ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Framework">
+      <UniqueIdentifier>{da0f3afd-346b-4e1e-98bd-630dbe2a0813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes">
+      <UniqueIdentifier>{c1f53c5f-7d45-4a30-8a82-9294bac2ab9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Particle">
+      <UniqueIdentifier>{90ee135a-2d56-43a0-bf78-0593e9b6b1b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="directx.ico">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="settings.manifest">
+      <Filter>Assets</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Classes\Framework\Game.cpp">
+      <Filter>Classes\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Framework\Main.cpp">
+      <Filter>Classes\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Framework\MyGame.cpp">
+      <Filter>Classes\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Framework\Window.cpp">
+      <Filter>Classes\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Scenes\PlayScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Scenes\SceneManager.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Particle\ParticleEffect.cpp">
+      <Filter>Classes\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Particle\ParticleEffectManager.cpp">
+      <Filter>Classes\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Particle\ParticleFactory.cpp">
+      <Filter>Classes\Particle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classes\Framework\Game.h">
+      <Filter>Classes\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Framework\MyGame.h">
+      <Filter>Classes\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Framework\Window.h">
+      <Filter>Classes\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Scenes\BaseScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Scenes\PlayScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Scenes\SceneManager.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Particle\ParticleEffect.h">
+      <Filter>Classes\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Particle\ParticleEffectManager.h">
+      <Filter>Classes\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Particle\ParticleFactory.h">
+      <Filter>Classes\Particle</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
