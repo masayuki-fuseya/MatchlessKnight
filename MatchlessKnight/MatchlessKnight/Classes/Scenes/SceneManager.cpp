@@ -11,14 +11,16 @@
 // ヘッダファイルの読み込み ================================================
 #include "SceneManager.h"
 #include "PlayScene.h"
+#include "TitleScene.h"
 
 // ネームスペースの省略 ====================================================
 using namespace MasaboLib;
+using namespace std;
 using namespace DirectX;
 using namespace DX;
 
 // 静的メンバ変数の定義 ====================================================
-std::unique_ptr<SceneManager> SceneManager::m_instance = nullptr;
+unique_ptr<SceneManager> SceneManager::m_instance = nullptr;
 
 
 //**********************************************************************
@@ -59,8 +61,8 @@ void SceneManager::Render(const StepTimer& timer, SpriteBatch* batch, SpriteFont
 void SceneManager::RegisterScene()
 {
 	m_scene[SCENE_ID::LOGO];
-	m_scene[SCENE_ID::TITLE];
-	m_scene[SCENE_ID::PLAY] = std::make_unique<PlayScene>();
+	m_scene[SCENE_ID::TITLE] = make_unique<TitleScene>();
+	m_scene[SCENE_ID::PLAY] = make_unique<PlayScene>();
 	m_scene[SCENE_ID::CLEAR];
 	m_scene[SCENE_ID::OVER];
 }

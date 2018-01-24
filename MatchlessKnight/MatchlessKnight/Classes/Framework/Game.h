@@ -14,8 +14,8 @@
 #define GAME
 
 // ヘッダファイルの読み込み ================================================
-#include "Window.h"
 #include "MasaboLib.h"
+#include "Window.h"
 #include <CommonStates.h>
 #include <d3d11.h>
 #include <Effects.h>

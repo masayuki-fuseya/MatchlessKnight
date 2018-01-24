@@ -76,7 +76,7 @@ namespace MasaboLib
 	private:
 		// プリミティブバッチ
 		std::unique_ptr<DirectX::PrimitiveBatch<DirectX::VertexPositionColorTexture>> m_primitiveBatch;
-		// 頂点データ配列
+		// 頂点データ
 		std::unique_ptr<DirectX::VertexPositionColorTexture> m_vertice;
 		// 汎用描画設定
 		std::unique_ptr<DirectX::CommonStates> m_commonStates;
@@ -90,8 +90,6 @@ namespace MasaboLib
 
 		// パーティクルデータ
 		std::unique_ptr<ParticleData> m_data;
-		// 現在の色
-		DirectX::SimpleMath::Vector4 m_nowColor;
 		// フレーム数
 		int m_frameCount;
 	public:
@@ -100,7 +98,7 @@ namespace MasaboLib
 
 		void Initialize(ParticleData& data);
 		void Update(const MasaboLib::DX::StepTimer& timer);
-		void Render(MasaboLib::Camera* camera);
+		void Render();
 		void Finalize();
 
 		bool IsEnded();

@@ -10,8 +10,8 @@
 
 // ヘッダファイルの読み込み ================================================
 #include "Window.h"
-#include "Game.h"
 #include "MasaboLib.h"
+#include "Game.h"
 
 // ネームスペースの省略 ====================================================
 using namespace DirectX;
@@ -178,7 +178,7 @@ LRESULT CALLBACK Window::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 		break;
 
 	case WM_DESTROY:
-		PostQuitMessage(WM_QUIT);
+		game->Exit();
 		break;
 
 	case WM_SYSKEYDOWN:

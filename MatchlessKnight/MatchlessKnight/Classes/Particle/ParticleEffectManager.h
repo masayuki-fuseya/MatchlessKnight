@@ -16,17 +16,12 @@
 // ヘッダファイルの読み込み ================================================
 #include "MasaboLib.h"
 #include "ParticleEffect.h"
-#include <CommonStates.h>
 #include <d3d11.h>
 #include <map>
 #include <memory>
-#include <PrimitiveBatch.h>
 #include <SimpleMath.h>
-#include <string>
 #include <vector>
-#include <VertexTypes.h>
-#include <Windows.h>
-#include <wrl/client.h>
+#include <wrl.h>
 
 
 namespace MasaboLib

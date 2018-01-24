@@ -89,15 +89,22 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>C:\Users\s162155\Documents\private study\MasaboLib\MasaboLib;C:\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\cri\pc\include;C:\Users\s162155\Documents\private study\MasaboLib\MasaboLib;C:\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>MasaboLib.lib;DirectXTK.lib;d3d11.lib;dxguid.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\s162155\Documents\private study\MasaboLib\Debug;C:\DirectXTK\Bin\Desktop_2015\Win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cri_ware_pcx86_LE_import.lib;MasaboLib.lib;DirectXTK.lib;d3d11.lib;dxguid.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\cri\pc\libs\x86;C:\Users\s162155\Documents\private study\MasaboLib\Debug;C:\DirectXTK\Bin\Desktop_2015\Win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <MeshContentTask>
+      <ContentOutput>Resources\CMO\%(Filename).cmo</ContentOutput>
+    </MeshContentTask>
+    <FxCompile>
+      <ShaderModel>4.0</ShaderModel>
+      <ObjectFileOutput>Resources\CSO\%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -125,7 +132,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>C:\Users\s162155\Documents\private study\MasaboLib\MasaboLib;C:\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\cri\pc\include;C:\Users\s162155\Documents\private study\MasaboLib\MasaboLib;C:\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -134,7 +141,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>MasaboLib.lib;DirectXTK.lib;d3d11.lib;dxguid.lib;uuid.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\s162155\Documents\private study\MasaboLib\Release;C:\DirectXTK\Bin\Desktop_2015\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\cri\pc\libs\x86;C:\Users\s162155\Documents\private study\MasaboLib\Release;C:\DirectXTK\Bin\Desktop_2015\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -166,26 +173,76 @@
     <Manifest Include="settings.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Classes\ADX2\ADX2Le.cpp" />
+    <ClCompile Include="Classes\Collision\Collision.cpp" />
+    <ClCompile Include="Classes\Collision\CollisionNode.cpp" />
     <ClCompile Include="Classes\Framework\Game.cpp" />
     <ClCompile Include="Classes\Framework\Main.cpp" />
     <ClCompile Include="Classes\Framework\MyGame.cpp" />
     <ClCompile Include="Classes\Framework\Window.cpp" />
+    <ClCompile Include="Classes\LandShape\LandShape.cpp" />
+    <ClCompile Include="Classes\LandShape\LandShapeData.cpp" />
     <ClCompile Include="Classes\Particle\ParticleEffect.cpp" />
     <ClCompile Include="Classes\Particle\ParticleEffectManager.cpp" />
     <ClCompile Include="Classes\Particle\ParticleFactory.cpp" />
     <ClCompile Include="Classes\Scenes\PlayScene.cpp" />
     <ClCompile Include="Classes\Scenes\SceneManager.cpp" />
+    <ClCompile Include="Classes\Scenes\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Classes\ADX2\ADX2Le.h" />
+    <ClInclude Include="Classes\Collision\Collision.h" />
+    <ClInclude Include="Classes\Collision\CollisionNode.h" />
     <ClInclude Include="Classes\Framework\Game.h" />
     <ClInclude Include="Classes\Framework\MyGame.h" />
     <ClInclude Include="Classes\Framework\Window.h" />
+    <ClInclude Include="Classes\LandShape\LandShape.h" />
+    <ClInclude Include="Classes\LandShape\LandShapeData.h" />
     <ClInclude Include="Classes\Particle\ParticleEffect.h" />
     <ClInclude Include="Classes\Particle\ParticleEffectManager.h" />
     <ClInclude Include="Classes\Particle\ParticleFactory.h" />
     <ClInclude Include="Classes\Scenes\BaseScene.h" />
     <ClInclude Include="Classes\Scenes\PlayScene.h" />
     <ClInclude Include="Classes\Scenes\SceneManager.h" />
+    <ClInclude Include="Classes\Scenes\TitleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MeshContentTask Include="Assets\FBX\fellguard.FBX" />
+    <MeshContentTask Include="Assets\FBX\floor.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightBody.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightHead.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftCalf.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftFoot.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftForeArm.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftHand.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftThigh.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftUpperArm.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightCalf.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightFoot.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightForeArm.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightHand.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightThigh.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightUpperArm.FBX" />
+    <MeshContentTask Include="Assets\FBX\Knight\KnightSword.FBX" />
+    <MeshContentTask Include="Assets\FBX\skydome.FBX" />
+    <MeshContentTask Include="Assets\FBX\wall.FBX" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\Particle.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Assets\Shaders\ParticleGS.hlsl">
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Geometry</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\ParticlePS.hlsl">
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\ParticleVS.hlsl">
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

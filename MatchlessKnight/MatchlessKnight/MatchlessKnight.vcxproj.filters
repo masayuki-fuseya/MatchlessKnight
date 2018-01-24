@@ -20,6 +20,21 @@
     <Filter Include="Classes\Particle">
       <UniqueIdentifier>{90ee135a-2d56-43a0-bf78-0593e9b6b1b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\FBX\Player">
+      <UniqueIdentifier>{9205eefc-e51c-424c-89bb-ca510223f333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shader">
+      <UniqueIdentifier>{6ee51aca-8a97-4d50-8b18-226e427ada8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\LandShape">
+      <UniqueIdentifier>{77583592-a8be-4a14-8dd7-da3b896961ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Collision">
+      <UniqueIdentifier>{dd494b4c-d759-4934-8890-203d8ff9928e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ADX2">
+      <UniqueIdentifier>{cd91ed0f-540c-487d-9cd8-d3cdb132c6f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -62,6 +77,24 @@
     <ClCompile Include="Classes\Particle\ParticleFactory.cpp">
       <Filter>Classes\Particle</Filter>
     </ClCompile>
+    <ClCompile Include="Classes\Scenes\TitleScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\LandShape\LandShape.cpp">
+      <Filter>Classes\LandShape</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\LandShape\LandShapeData.cpp">
+      <Filter>Classes\LandShape</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Collision\Collision.cpp">
+      <Filter>Classes\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Collision\CollisionNode.cpp">
+      <Filter>Classes\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\ADX2\ADX2Le.cpp">
+      <Filter>Classes\ADX2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes\Framework\Game.h">
@@ -91,5 +124,98 @@
     <ClInclude Include="Classes\Particle\ParticleFactory.h">
       <Filter>Classes\Particle</Filter>
     </ClInclude>
+    <ClInclude Include="Classes\Scenes\TitleScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\LandShape\LandShape.h">
+      <Filter>Classes\LandShape</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\LandShape\LandShapeData.h">
+      <Filter>Classes\LandShape</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Collision\Collision.h">
+      <Filter>Classes\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Collision\CollisionNode.h">
+      <Filter>Classes\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\ADX2\ADX2Le.h">
+      <Filter>Classes\ADX2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MeshContentTask Include="Assets\FBX\fellguard.FBX">
+      <Filter>Assets\FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\floor.FBX">
+      <Filter>Assets\FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\skydome.FBX">
+      <Filter>Assets\FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\wall.FBX">
+      <Filter>Assets\FBX</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightBody.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightHead.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftCalf.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftFoot.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftForeArm.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftHand.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftThigh.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightLeftUpperArm.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightCalf.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightFoot.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightForeArm.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightHand.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightThigh.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightRightUpperArm.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\FBX\Knight\KnightSword.FBX">
+      <Filter>Assets\FBX\Player</Filter>
+    </MeshContentTask>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\Particle.hlsli">
+      <Filter>Assets\Shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Assets\Shaders\ParticleGS.hlsl">
+      <Filter>Assets\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\ParticlePS.hlsl">
+      <Filter>Assets\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Assets\Shaders\ParticleVS.hlsl">
+      <Filter>Assets\Shader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

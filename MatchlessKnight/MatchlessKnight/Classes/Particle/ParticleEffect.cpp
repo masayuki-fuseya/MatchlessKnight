@@ -131,11 +131,11 @@ void ParticleEffect::Update(const StepTimer& timer)
 //**********************************************************************
 //!	@brief		•`‰æˆ—
 //!
-//!	@param[in]	ƒJƒƒ‰
+//!	@param[in]	‚È‚µ
 //!
 //!	@return		‚È‚µ
 //**********************************************************************
-void ParticleEffect::Render(Camera* camera)
+void ParticleEffect::Render()
 {
 	auto graphics = Graphics::GetInstance();
 

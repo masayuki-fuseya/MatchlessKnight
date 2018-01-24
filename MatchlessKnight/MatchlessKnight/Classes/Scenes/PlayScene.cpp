@@ -10,13 +10,13 @@
 
 // ヘッダファイルの読み込み ================================================
 #include "PlayScene.h"
-#include "MasaboLib.h"
 
 // ネームスペースの省略 ====================================================
 using namespace MasaboLib;
 using namespace std;
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
+using namespace DX;
 
 
 //**********************************************************************
@@ -43,9 +43,15 @@ void PlayScene::Initialize()
 {
 	m_camera = make_unique<DebugCamera>(Graphics::GetInstance()->GetWidth(), Graphics::GetInstance()->GetHeight());
 
+	// オブジェクトの静的変数を初期化する
+	Obj3D::InitializeStatic(m_camera.get());
+
 	// ファクトリーを生成する
 	m_factory = make_unique<EffectFactory>(Graphics::GetInstance()->GetDevice());
 	m_factory->SetDirectory(L"Resources");
+
+	// テクスチャを登録する
+	TextureManager::GetInstance()->Initialize(L"Assets\\CSV\\textureData.csv");
 }
 
 
@@ -57,7 +63,7 @@ void PlayScene::Initialize()
 //!
 //!	@return		なし
 //**********************************************************************
-void PlayScene::Update(const DX::StepTimer& timer)
+void PlayScene::Update(const StepTimer& timer)
 {
 	m_camera->Update();
 }
@@ -71,12 +77,15 @@ void PlayScene::Update(const DX::StepTimer& timer)
 //!
 //!	@return		なし
 //**********************************************************************
-void PlayScene::Render(const DX::StepTimer& timer, SpriteBatch* batch, SpriteFont* font)
+void PlayScene::Render(const StepTimer& timer, SpriteBatch* batch, SpriteFont* font)
 {
 	// ビュー行列を取得する
 	Matrix view = m_camera->GetView();
 	// プロジェクション行列を取得する
 	Matrix proj = m_camera->GetProj();
+
+	// テクスチャを描画する
+	TextureManager::GetInstance()->Render(batch);
 }
 
 

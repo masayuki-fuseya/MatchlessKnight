@@ -58,8 +58,8 @@ namespace MasaboLib
 			return m_instance.get();
 		}
 
-		void Update(const MasaboLib::DX::StepTimer& timer);
-		void Render(const MasaboLib::DX::StepTimer& timer, DirectX::SpriteBatch* batch, DirectX::SpriteFont* font);
+		void Update(const DX::StepTimer& timer);
+		void Render(const DX::StepTimer& timer, DirectX::SpriteBatch* batch, DirectX::SpriteFont* font);
 
 		// ÉVÅ[ÉìÇìoò^Ç∑ÇÈ
 		void RegisterScene();

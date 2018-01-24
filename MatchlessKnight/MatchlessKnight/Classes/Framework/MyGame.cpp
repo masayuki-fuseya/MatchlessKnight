@@ -15,7 +15,6 @@
 // ネームスペースの省略 ====================================================
 using namespace MasaboLib;
 using namespace std;
-using namespace DirectX;
 using namespace DX;
 
 
@@ -49,7 +48,7 @@ void MyGame::Initialize()
 	Input::GetInstance()->CreateKeyboard();
 	// マウスを生成する
 	Input::GetInstance()->CreateMouse();
-
+	
 	// シーンを登録する
 	SceneManager::GetInstance()->RegisterScene();
 	// 初期シーンを設定してから初期化する

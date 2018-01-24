@@ -14,6 +14,7 @@
 
 // ネームスペースの省略 ====================================================
 using namespace MasaboLib;
+using namespace std;
 
 
 //**********************************************************************
@@ -23,12 +24,12 @@ using namespace MasaboLib;
 //!
 //!	@return		生成されたパーティクル
 //**********************************************************************
-std::unique_ptr<ParticleEffect> ParticleFactory::Create(int textureNumber, ParticleEffect::ParticleData& data, const wchar_t* filepath)
+unique_ptr<ParticleEffect> ParticleFactory::Create(int textureNumber, ParticleEffect::ParticleData& data, const wchar_t* filepath)
 {
-	std::unique_ptr<ParticleEffect> particle = std::make_unique<ParticleEffect>();
+	std::unique_ptr<ParticleEffect> particle = make_unique<ParticleEffect>();
 	particle->Initialize(data);
 	auto texture = ParticleEffectManager::GetInstance()->CreateTexture(textureNumber, filepath);
 	particle->SetTexture(texture);
 
-	return std::move(particle);
+	return move(particle);
 }

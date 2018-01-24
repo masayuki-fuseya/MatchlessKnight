@@ -15,7 +15,6 @@
 using namespace MasaboLib;
 using namespace std;
 using namespace DirectX;
-using namespace DirectX::SimpleMath;
 using namespace DX;
 
 
@@ -311,5 +310,5 @@ void Game::Exit()
 void Game::DrawFPS()
 {
 	wstring fpsString = L"fps = " + to_wstring((unsigned int)m_timer.GetFramesPerSecond());
-	m_font->DrawString(m_batch.get(), fpsString.c_str(), Vector2(0, 0), Colors::White);
+	m_font->DrawString(m_batch.get(), fpsString.c_str(), SimpleMath::Vector2(0, 0), Colors::White);
 }

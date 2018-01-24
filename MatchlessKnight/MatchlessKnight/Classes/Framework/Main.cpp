@@ -12,7 +12,6 @@
 #include "MyGame.h"
 
 // ネームスペースの省略 ====================================================
-using namespace std;
 using namespace DirectX;
 
 
