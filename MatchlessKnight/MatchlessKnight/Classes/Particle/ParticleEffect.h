@@ -59,6 +59,9 @@ namespace MasaboLib
 				, m_endRadian(0.0f)
 				, m_disappearanceTime(1.0f) {}
 
+
+
+			// 全ての変数を初期化する
 			void Initialize()
 			{
 				m_pos = DirectX::SimpleMath::Vector3::Zero;
@@ -101,12 +104,19 @@ namespace MasaboLib
 		void Render();
 		void Finalize();
 
+		// 寿命が終わったか
 		bool IsEnded();
 
+		// セッター ////////////////////////////////////////////
+
+		// テクスチャを設定する
 		void SetTexture(const Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>& texture)
 		{
 			m_texture = texture;
 		}
+
+		////////////////////////////////////////////////////////
+
 	};
 }
 

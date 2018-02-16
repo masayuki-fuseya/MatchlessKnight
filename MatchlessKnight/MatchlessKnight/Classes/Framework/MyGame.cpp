@@ -49,11 +49,12 @@ void MyGame::Initialize()
 	// マウスを生成する
 	Input::GetInstance()->CreateMouse();
 	
+	auto sceneManager = SceneManager::GetInstance();
 	// シーンを登録する
-	SceneManager::GetInstance()->RegisterScene();
+	sceneManager->RegisterScene();
 	// 初期シーンを設定してから初期化する
-	SceneManager::GetInstance()->ChangeScene(SceneManager::SCENE_ID::PLAY);
-	SceneManager::GetInstance()->ChangePreScene();
+	sceneManager->ChangeScene(SceneManager::SCENE_ID::PLAY);
+	sceneManager->ChangePreScene();
 }
 
 
@@ -67,9 +68,15 @@ void MyGame::Initialize()
 //**********************************************************************
 void MyGame::Update(const StepTimer& timer)
 {
-	float elapsedTime = float(timer.GetElapsedSeconds());
-
 	Input::GetInstance()->Update();
+
+	// Escキーを押されたらゲームを終了する
+	if (Input::GetInstance()->GetKeyboardTracker()->IsKeyPressed(DirectX::Keyboard::Escape))
+	{
+		SceneManager::GetInstance()->ChangePostScene();
+		SceneManager::GetInstance()->ChangeScene(SceneManager::SCENE_ID::NONE);
+		return;
+	}
 
 	// シーンクラスを更新する
 	SceneManager::GetInstance()->Update(timer);
@@ -92,8 +99,6 @@ void MyGame::Render(const StepTimer& timer)
 		return;
 	}
 
-	auto graphics = Graphics::GetInstance();
-
 	// 画面をクリアする
 	Clear();
 
@@ -114,7 +119,7 @@ void MyGame::Render(const StepTimer& timer)
 
 
 //**********************************************************************
-//!	@brief		終了処理をする
+//!	@brief		終了処理する
 //!
 //!	@param[in]	なし
 //!
@@ -122,5 +127,8 @@ void MyGame::Render(const StepTimer& timer)
 //**********************************************************************
 void MyGame::Finalize()
 {
+	// シーンクラスの終了処理をする
+	SceneManager::GetInstance()->Finalize();
+
 	Game::Finalize();
 }

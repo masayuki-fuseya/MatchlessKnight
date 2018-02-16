@@ -13,7 +13,7 @@
 #include "ParticleEffectManager.h"
 #include <WICTextureLoader.h>
 
-
+// ネームスペースの省略 ====================================================
 using namespace MasaboLib;
 using namespace DirectX;
 using namespace DirectX::SimpleMath;

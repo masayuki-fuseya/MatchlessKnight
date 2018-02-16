@@ -30,8 +30,6 @@ const vector<D3D11_INPUT_ELEMENT_DESC> ParticleEffectManager::INPUT_LAYOUT =
 	{ "TEXCOORD",	0, DXGI_FORMAT_R32G32_FLOAT,		0, sizeof(Vector3) + sizeof(Vector4),	D3D11_INPUT_PER_VERTEX_DATA, 0 }
 };
 
-unique_ptr<ParticleEffectManager> ParticleEffectManager::m_instance = nullptr;
-
 
 //**********************************************************************
 //!	@brief		‰Šú‰»ˆ—
@@ -119,7 +117,7 @@ void ParticleEffectManager::Update(const StepTimer& timer)
 		}
 		else
 		{
-			itr++;
+			++itr;
 		}
 	}
 }
@@ -168,7 +166,7 @@ void ParticleEffectManager::Render()
 	context->GSSetShader(m_GeometryShader.Get(), nullptr, 0);
 	context->PSSetShader(m_PixelShader.Get(), nullptr, 0);
 
-	for (auto itr = m_particles.begin(); itr != m_particles.end(); itr++)
+	for (auto itr = m_particles.begin(); itr != m_particles.end(); ++itr)
 	{
 		(*itr)->Render();
 	}

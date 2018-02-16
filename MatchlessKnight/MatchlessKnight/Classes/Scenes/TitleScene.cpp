@@ -49,7 +49,7 @@ void TitleScene::Initialize()
 	m_selectionItem = 0;
 
 	// テクスチャの生成と読み込み
-	TextureManager::GetInstance()->Initialize(L"Assets\\CSV\\textureData.csv");
+	TextureManager::GetInstance()->Initialize(L"Assets\\CSV\\TitleTexture.csv");
 	//RECT rect;
 	//rect = { 0, 0, 1000, 750 };
 	//m_backgroundTexture = std::make_unique<Texture>();
@@ -152,13 +152,6 @@ void TitleScene::Render(const StepTimer& timer, SpriteBatch* batch, SpriteFont* 
 	// 全てのテクスチャを描画する
 	TextureManager::GetInstance()->Render(batch);
 
-	//// 背景の表示
-	//m_backgroundTexture->Render(batch, m_bgPos);
-	//m_backgroundTexture->Render(batch, Vector2(m_bgPos.x - m_backgroundTexture->GetSize().right, m_bgPos.y));
-
-	//// タイトルの表示
-	//m_titleTexture->Render(batch, Vector2(width / 2.0f - 330, height / 2.0f - 270));
-	//
 	//// スペースキーが押されているか
 	//if (m_isPressedSpace)
 	//{
@@ -189,4 +182,5 @@ void TitleScene::Render(const StepTimer& timer, SpriteBatch* batch, SpriteFont* 
 //**********************************************************************
 void TitleScene::Finalize()
 {
+	TextureManager::GetInstance()->ClearTexture();
 }

@@ -24,11 +24,11 @@
 struct LandShapeCommonDef
 {
 	// カメラ
-	MasaboLib::Camera* pCamera;
+	MasaboLib::Camera* camera;
 
 	LandShapeCommonDef()
 	{
-		pCamera = nullptr;
+		camera = nullptr;
 	}
 };
 
@@ -40,17 +40,17 @@ protected:
 	friend class LandShape;
 
 	// 共通カメラ
-	MasaboLib::Camera* m_pCamera;
+	MasaboLib::Camera* m_camera;
 	// コモンステートへのポインタ
-	std::unique_ptr<DirectX::CommonStates>	m_pStates;
+	std::unique_ptr<DirectX::CommonStates> m_commonStates;
 	// エフェクトファクトリ
-	std::unique_ptr<DirectX::EffectFactory>	m_pEffectFactory;
+	std::unique_ptr<DirectX::EffectFactory>	m_effectFactory;
 	// ベーシックエフェクトへのポインタ
-	std::unique_ptr<DirectX::BasicEffect>	m_pEffect;
+	std::unique_ptr<DirectX::BasicEffect> m_basicEffect;
 	// プリミティブバッチへのポインタ
-	std::unique_ptr<DirectX::PrimitiveBatch<DirectX::VertexPositionNormal>>	m_pPrimitiveBatch;
+	std::unique_ptr<DirectX::PrimitiveBatch<DirectX::VertexPositionNormal>>	m_primitiveBatch;
 	// 入力レイアウトへのポインタ
-	ID3D11InputLayout*	m_pInputLayout;
+	ID3D11InputLayout*	m_inputLayout;
 public:
 	// デバッグ表示用の最大頂点数
 	static const size_t BatchSize = 6144;
@@ -66,16 +66,16 @@ class LandShape
 {
 protected:
 	// 共通データ
-	static std::unique_ptr<LandShapeCommon> s_pCommon;
+	static std::unique_ptr<LandShapeCommon> m_common;
 	// 地形当たりデータマップ
-	static std::map<std::wstring, std::unique_ptr<LandShapeData>> s_dataarray;
+	static std::map<std::wstring, std::unique_ptr<LandShapeData>> m_dataArray;
 
 	// 表示オブジェクト
-	MasaboLib::Obj3D m_Obj;
+	MasaboLib::Obj3D m_obj;
 	// 地形当たりデータ
-	const LandShapeData* m_pData;
+	const LandShapeData* m_data;
 	// ワールド→モデル行列
-	DirectX::SimpleMath::Matrix m_WorldLocal;
+	DirectX::SimpleMath::Matrix m_worldLocal;
 public:
 	// エフェクトファクトリ生成
 	static void InitializeCommon(LandShapeCommonDef def);
@@ -88,7 +88,7 @@ public:
 	void Update();
 	// デバッグ描画
 	void Draw();
-	// ライティングカット
+	// ライティングを無効にする
 	void DisableLighting();
 
 	bool IntersectSphere(const Sphere& sphere, DirectX::SimpleMath::Vector3* reject);
@@ -97,35 +97,35 @@ public:
 	// アクセッサ
 	const DirectX::SimpleMath::Vector3& GetTrans()
 	{
-		return m_Obj.GetTranslation();
+		return m_obj.GetTranslation();
 	}
 	const DirectX::SimpleMath::Vector3& GetRot()
 	{
-		return m_Obj.GetRotation();
+		return m_obj.GetRotation();
 	}
 	float GetScale()
 	{
-		return m_Obj.GetScale().x;
+		return m_obj.GetScale().x;
 	}
 	const DirectX::SimpleMath::Matrix& GetLocalWorld()
 	{
-		return m_Obj.GetWorld();
+		return m_obj.GetWorld();
 	}
 
 	void SetTrans(const DirectX::SimpleMath::Vector3& trans)
 	{
-		m_Obj.SetTranslation(trans);
+		m_obj.SetTranslation(trans);
 	}
 	void SetRot(const DirectX::SimpleMath::Vector3& rot)
 	{
-		m_Obj.SetRotation(rot);
+		m_obj.SetRotation(rot);
 	}
 	void SetScale(float scale)
 	{
-		m_Obj.SetScale(DirectX::SimpleMath::Vector3(scale));
+		m_obj.SetScale(DirectX::SimpleMath::Vector3(scale));
 	}
 	void SetLocalWorld(const DirectX::SimpleMath::Matrix& mat)
 	{
-		m_Obj.SetWorld(mat);
+		m_obj.SetWorld(mat);
 	}
 };

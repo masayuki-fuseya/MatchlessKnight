@@ -29,37 +29,24 @@ namespace MasaboLib
 	public:
 		enum SCENE_ID
 		{
-			NONE,
-			LOGO,
-			TITLE,
-			PLAY,
-			CLEAR,
-			OVER
+			NONE,		// なし(ゲーム終了)
+			LOGO,		// ロゴシーン
+			TITLE,		// タイトルシーン
+			PLAY,		// プレイシーン
+			CLEAR,		// ゲームクリアシーン
+			OVER		// ゲームオーバーシーン
 		};
 	private:
 		friend class Singleton<SceneManager>;
-
-		// インスタンス
-		static std::unique_ptr<SceneManager> m_instance;
 
 		// 全てのシーンを保持
 		std::map<SCENE_ID, std::unique_ptr<BaseScene>> m_scene;
 		// 現在のシーンID
 		SCENE_ID m_id;
 	public:
-		// インスタンスを取得する
-		static SceneManager* GetInstance()
-		{
-			// 生成されてなければ生成する
-			if (!m_instance.get())
-			{
-				m_instance.reset(new SceneManager());
-			}
-			return m_instance.get();
-		}
-
 		void Update(const DX::StepTimer& timer);
 		void Render(const DX::StepTimer& timer, DirectX::SpriteBatch* batch, DirectX::SpriteFont* font);
+		void Finalize();
 
 		// シーンを登録する
 		void RegisterScene();

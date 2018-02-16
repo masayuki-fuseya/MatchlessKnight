@@ -35,6 +35,36 @@
     <Filter Include="Classes\ADX2">
       <UniqueIdentifier>{cd91ed0f-540c-487d-9cd8-d3cdb132c6f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Composite">
+      <UniqueIdentifier>{494c3023-ef1c-40b5-9991-84203c5a8df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Factory">
+      <UniqueIdentifier>{50efea40-ab34-45ba-979c-d72f92dcff18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\State">
+      <UniqueIdentifier>{1b15056b-4424-42f2-bca2-610b383a80b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Objects">
+      <UniqueIdentifier>{cdfc33b7-81be-4bee-bd9f-a9ec482b24b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Objects\Character">
+      <UniqueIdentifier>{bd25c737-c413-4415-80ca-354501abe23c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Objects\Sword">
+      <UniqueIdentifier>{a9bc947b-1a76-4f2b-8d05-1746f316ca54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Objects\Character\Player">
+      <UniqueIdentifier>{38f497e2-aab1-45d3-8c54-4a58919d61d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Objects\Character\Enemy">
+      <UniqueIdentifier>{ab453de4-8170-4725-8cc1-27ff9ca1a01b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Objects\Character\Player\PlayerParts">
+      <UniqueIdentifier>{967b02ba-28a1-4ac1-a09b-031e1948be10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Camera">
+      <UniqueIdentifier>{13af2e3c-c6bd-4c6e-b671-5f7c8c03de54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
@@ -95,6 +125,81 @@
     <ClCompile Include="Classes\ADX2\ADX2Le.cpp">
       <Filter>Classes\ADX2</Filter>
     </ClCompile>
+    <ClCompile Include="Classes\Composite\CompositeVisitor.cpp">
+      <Filter>Classes\Composite</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Character.cpp">
+      <Filter>Classes\Objects\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Enemy\Enemy.cpp">
+      <Filter>Classes\Objects\Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Enemy\WeakEnemy.cpp">
+      <Filter>Classes\Objects\Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Sword\Sword.cpp">
+      <Filter>Classes\Objects\Sword</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\Player.cpp">
+      <Filter>Classes\Objects\Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\State\AttackingState.cpp">
+      <Filter>Classes\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\State\StandingState.cpp">
+      <Filter>Classes\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerBody.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerHead.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftCalf.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftFoot.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftForeArm.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftHand.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftThigh.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftUpperArm.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightCalf.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightFoot.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightForeArm.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightHand.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightThigh.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightUpperArm.cpp">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Factory\PlayerPartsFactory.cpp">
+      <Filter>Classes\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Factory\EnemyFactory.cpp">
+      <Filter>Classes\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\Camera\FollowCamera.cpp">
+      <Filter>Classes\Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes\Framework\Game.h">
@@ -141,6 +246,90 @@
     </ClInclude>
     <ClInclude Include="Classes\ADX2\ADX2Le.h">
       <Filter>Classes\ADX2</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\ADX2\PlayerSE.h">
+      <Filter>Classes\ADX2</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Composite\CompositeVisitor.h">
+      <Filter>Classes\Composite</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Character.h">
+      <Filter>Classes\Objects\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Enemy\Enemy.h">
+      <Filter>Classes\Objects\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Enemy\WeakEnemy.h">
+      <Filter>Classes\Objects\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Sword\Sword.h">
+      <Filter>Classes\Objects\Sword</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\Player.h">
+      <Filter>Classes\Objects\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\State\AttackingState.h">
+      <Filter>Classes\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\State\StandingState.h">
+      <Filter>Classes\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\State\State.h">
+      <Filter>Classes\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Composite\INode.h">
+      <Filter>Classes\Composite</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerBody.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerHead.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftCalf.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftFoot.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftForeArm.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftHand.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftThigh.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerLeftUpperArm.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightCalf.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightFoot.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightForeArm.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightHand.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightThigh.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Objects\Character\Player\PlayerParts\PlayerRightUpperArm.h">
+      <Filter>Classes\Objects\Character\Player\PlayerParts</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Factory\PlayerPartsFactory.h">
+      <Filter>Classes\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Factory\EnemyFactory.h">
+      <Filter>Classes\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Camera\FollowCamera.h">
+      <Filter>Classes\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

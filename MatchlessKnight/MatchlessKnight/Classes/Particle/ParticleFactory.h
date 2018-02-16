@@ -24,7 +24,7 @@ namespace MasaboLib
 	{
 	public:
 		// パーティクルを生成する
-		static std::unique_ptr<ParticleEffect> Create(int textureNumber, ParticleEffect::ParticleData& data, const wchar_t* filepath);
+		static std::unique_ptr<ParticleEffect>&& Create(int textureNumber, ParticleEffect::ParticleData& data, const wchar_t* filepath);
 	};
 }
 

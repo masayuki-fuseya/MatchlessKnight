@@ -63,8 +63,9 @@ void Game::Initialize()
 	
 	m_batch = make_unique<SpriteBatch>(graphics->GetContext());
 	m_font = make_unique<SpriteFont>(graphics->GetDevice(), L"myfile.spritefont");
-	m_commonStates = make_unique<CommonStates>(graphics->GetDevice());
-	m_effectFactory = make_unique<EffectFactory>(graphics->GetDevice());
+
+	// マウスカーソルを非表示にする
+	ShowCursor(false);
 }
 
 

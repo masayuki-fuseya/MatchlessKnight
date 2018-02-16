@@ -45,9 +45,6 @@ namespace MasaboLib
 	private:
 		friend class Singleton<ParticleEffectManager>;
 
-		// インスタンス
-		static std::unique_ptr<ParticleEffectManager> m_instance;
-
 		// 頂点シェーダ
 		Microsoft::WRL::ComPtr<ID3D11VertexShader> m_VertexShader;
 		// ジオメトリシェーダ
@@ -69,17 +66,6 @@ namespace MasaboLib
 		// パーティクルの集合体
 		std::vector<std::unique_ptr<ParticleEffect>> m_particles;
 	public:
-		// インスタンスを取得する
-		static ParticleEffectManager* GetInstance()
-		{
-			// 生成されてなければ生成する
-			if (!m_instance.get())
-			{
-				m_instance.reset(new ParticleEffectManager());
-			}
-			return m_instance.get();
-		}
-
 		void Initialize();
 		void Update(const MasaboLib::DX::StepTimer& timer);
 		void Render();

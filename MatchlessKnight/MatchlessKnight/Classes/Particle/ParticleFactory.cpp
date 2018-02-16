@@ -24,7 +24,7 @@ using namespace std;
 //!
 //!	@return		生成されたパーティクル
 //**********************************************************************
-unique_ptr<ParticleEffect> ParticleFactory::Create(int textureNumber, ParticleEffect::ParticleData& data, const wchar_t* filepath)
+unique_ptr<ParticleEffect>&& ParticleFactory::Create(int textureNumber, ParticleEffect::ParticleData& data, const wchar_t* filepath)
 {
 	std::unique_ptr<ParticleEffect> particle = make_unique<ParticleEffect>();
 	particle->Initialize(data);

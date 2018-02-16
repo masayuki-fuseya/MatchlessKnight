@@ -137,8 +137,8 @@ unique_ptr<LandShapeData> LandShapeData::CreateFromData(const char* meshData)
 	char log_str[256];
 
 	// 頂点数、インデックス数をログ出力
-	sprintf_s(log_str, "VertexNum:%d  IndexNum:%d\n", landshape->m_Vertices.size(), landshape->m_Indices.size());
-	OutputDebugStringA(log_str);
+	//sprintf_s(log_str, "VertexNum:%d  IndexNum:%d\n", landshape->m_Vertices.size(), landshape->m_Indices.size());
+	//OutputDebugStringA(log_str);
 
 	// インデックスと頂点から、三角形データを構築
 	{
@@ -257,9 +257,8 @@ void LandShapeData::UpdateNodeMatrices(int index, const NodeInfo* nodeInfo_array
 			char str[256];
 
 			// 変換後の頂点座標をログ出力
-			sprintf_s(str, "(%.3f,%.3f,%.3f)\n", it->Pos.x, it->Pos.y, it->Pos.z);
-
-			OutputDebugStringA(str);
+			//sprintf_s(str, "(%.3f,%.3f,%.3f)\n", it->Pos.x, it->Pos.y, it->Pos.z);
+			//OutputDebugStringA(str);
 		}
 	}
 

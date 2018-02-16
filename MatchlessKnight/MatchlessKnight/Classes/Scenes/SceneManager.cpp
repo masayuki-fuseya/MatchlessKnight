@@ -19,9 +19,6 @@ using namespace std;
 using namespace DirectX;
 using namespace DX;
 
-// 静的メンバ変数の定義 ====================================================
-unique_ptr<SceneManager> SceneManager::m_instance = nullptr;
-
 
 //**********************************************************************
 //!	@brief		更新する
@@ -47,6 +44,20 @@ void SceneManager::Update(const StepTimer& timer)
 void SceneManager::Render(const StepTimer& timer, SpriteBatch* batch, SpriteFont* font)
 {
 	m_scene[m_id]->Render(timer, batch, font);
+}
+
+
+
+//**********************************************************************
+//!	@brief		終了処理する
+//!
+//!	@param[in]	なし
+//!
+//!	@return		なし
+//**********************************************************************
+void SceneManager::Finalize()
+{
+	m_scene[m_id]->Finalize();
 }
 
 

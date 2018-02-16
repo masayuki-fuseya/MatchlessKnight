@@ -43,10 +43,6 @@ protected:
 	std::unique_ptr<DirectX::SpriteBatch> m_batch;
 	// フォント
 	std::unique_ptr<DirectX::SpriteFont> m_font;
-	// エフェクトファクトリインターフェース
-	std::unique_ptr<DirectX::IEffectFactory> m_effectFactory;
-	// コモンステート
-	std::unique_ptr<DirectX::CommonStates> m_commonStates;
 public:
 	Game(int width, int height);
 
