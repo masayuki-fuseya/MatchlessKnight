@@ -86,6 +86,8 @@ void Player::Initialize()
 
 	// 初期位置を更新する
 	Update();
+	// 剣の初期位置を更新する
+	m_sword->Update(this);
 
 	// 当たり判定ノードを初期化する
 	m_collisionNodeBody.Initialize();

@@ -59,6 +59,10 @@ namespace MasaboLib
 		int m_timeLimit;
 		// 敵を倒した数
 		int m_numBeat;
+		// スタートしたかどうか
+		bool m_isStart;
+		// クリアしたかどうか
+		bool m_isClear;
 	public:
 		PlayScene();
 		~PlayScene() {}
@@ -72,6 +76,9 @@ namespace MasaboLib
 		void CollisionPlayerAndWall();
 		// プレイヤーの剣と敵の当たり判定
 		void CollisionPlayerSwordAndEnemy();
+		
+		// 残り時間を描画する
+		void RenderTimeLimit(DirectX::SpriteBatch* batch, DirectX::SpriteFont* font);
 	};
 }
 

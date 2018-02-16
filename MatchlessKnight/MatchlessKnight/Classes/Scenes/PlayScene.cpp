@@ -92,6 +92,9 @@ void PlayScene::Initialize()
 	m_frameCount = 0.0f;
 	m_timeLimit = 1800;
 	m_numBeat = 0;
+
+	m_isStart = false;
+	m_isClear = false;
 }
 
 
@@ -115,11 +118,25 @@ void PlayScene::Update(const StepTimer& timer)
 	// 壁を更新する
 	m_wall->Update();
 
+	// まだスタートしていなければ
+	if (!m_isStart)
+	{
+		// 3秒経ったらスタート
+		m_frameCount += (float)timer.GetElapsedSeconds();
+		if (m_frameCount >= 3.0f)
+		{
+			m_isStart = true;
+			m_frameCount = 0.0f;
+		}
+
+		return;
+	}
+
 	// プレイヤーを更新する
 	m_player->Update();
 
 	m_frameCount += (float)timer.GetElapsedSeconds();
-	if (m_frameCount >= 0.2f)
+	if ((int)(m_frameCount * 10) % 10 == 0)
 	{
 		// 敵がまだ生成できるなら生成する
 		shared_ptr<Enemy> enemy;
@@ -131,7 +148,7 @@ void PlayScene::Update(const StepTimer& timer)
 			(m_enemies.end() - 1)->get()->SetTarget(m_player.get());
 		}
 
-		m_frameCount = 0.0f;
+		//m_frameCount = 0.0f;
 	}
 
 	// 敵を更新する
@@ -169,7 +186,7 @@ void PlayScene::Update(const StepTimer& timer)
 	// 時間切れでクリア目標以上だったら
 	if (m_timeLimit == 0 && m_numBeat >= CLEAR_BEAT_NUM)
 	{
-		//m_isClear = true;
+		m_isClear = true;
 	}
 }
 
@@ -200,8 +217,49 @@ void PlayScene::Render(const StepTimer& timer, SpriteBatch* batch, SpriteFont* f
 	}
 
 	// 制限時間を描画する
+	RenderTimeLimit(batch, font);
 
 	// 倒した敵の数を描画する
+	wstring w = L"Enemy Kill:" + to_wstring(m_numBeat);
+	font->DrawString(batch, w.c_str(), Vector2(40.0f, 40.0f), Colors::White, 0.0f, g_XMZero, 1.5f);
+
+	// カウントダウンの表示
+	if (!m_isStart)
+	{
+		int width = Graphics::GetInstance()->GetWidth();
+		int height = Graphics::GetInstance()->GetHeight();
+
+		int second = 3 - (int)m_frameCount;
+		w = to_wstring(second);
+		font->DrawString(batch, w.c_str(), Vector2(width / 2.0f - 70.0f, height / 2.0f - 100.0f), Colors::DeepSkyBlue, 0.0f, g_XMZero, 8.0f);
+	}
+
+	// 始まって1秒だけスタートを表示する
+	if (m_isStart && m_frameCount <= 1.0f)
+	{
+		int width = Graphics::GetInstance()->GetWidth();
+		int height = Graphics::GetInstance()->GetHeight();
+
+		font->DrawString(batch, L"S T A R T", Vector2(width / 2.0f - 420.0f, height / 2.0f - 100.0f), Colors::DeepSkyBlue, 0.0f, g_XMZero, 8.0f);
+	}
+
+	// リザルト表示 /////////////////////////////////
+
+	// クリアしていたら
+	if (m_isClear)
+	{
+		// ゲームクリアを表示する
+		font->DrawString(batch, L"GAME CLEAR!!", Vector2(Graphics::GetInstance()->GetWidth() / 2.0f - 230.0f,
+			Graphics::GetInstance()->GetHeight() / 2.0f - 50.0f), Colors::Gold, 0.0f, g_XMZero, 3.0f);
+	}
+	else if (m_timeLimit == 0)
+	{
+		// ゲームオーバーを表示する
+		font->DrawString(batch, L"GAME OVER", Vector2(Graphics::GetInstance()->GetWidth() / 2.0f - 200.0f,
+			Graphics::GetInstance()->GetHeight() / 2.0f - 50.0f), Colors::Red, 0.0f, g_XMZero, 3.0f);
+	}
+
+	/////////////////////////////////////////////////
 
 	// テクスチャを描画する
 	//TextureManager::GetInstance()->Render(batch);
@@ -290,4 +348,30 @@ void PlayScene::CollisionPlayerSwordAndEnemy()
 			}
 		}
 	}
+}
+
+
+
+//**********************************************************************
+//!	@brief		制限時間を描画する
+//!
+//!	@param[in]	スプライトバッチ,　スプライトフォント
+//!
+//!	@return		なし
+//**********************************************************************
+void PlayScene::RenderTimeLimit(SpriteBatch* batch, SpriteFont* font)
+{
+	// 秒数
+	int minute = m_timeLimit / 3600;
+	// 分数
+	int second = (m_timeLimit % 3600) / 60;
+	// 00:00の表記にする
+	wstring w;
+	// 10未満だったら数字の前に0を付け足す
+	minute >= 10 ? w = to_wstring(minute) : w = L"0" + to_wstring(minute);
+	w = w + L":";
+	second >= 10 ? w = w + to_wstring(second) : w = w + L"0" + to_wstring(second);
+
+	// 制限時間を表示する
+	font->DrawString(batch, w.c_str(), Vector2(40.0f, 10.0f), Colors::White, 0.0f, g_XMZero, 1.5f);
 }
